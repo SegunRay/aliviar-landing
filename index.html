@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aliviar Financial — Independent Protection Advice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #F3F8FC;
+    --bg-warm: #E6F1F8;
+    --ink: #16232F;
+    --ink-soft: #4C6478;
+    --teal: #17406B;
+    --teal-deep: #0F2C4A;
+    --honey: #4FA8D8;
+    --honey-soft: #AED9F0;
+    --brick: #E8874A;
+    --line: #D6E6F0;
+    --white: #FFFFFF;
+    --radius: 18px;
+    --shadow: 0 10px 30px -14px rgba(15,44,74,0.25);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    color:var(--teal-deep);
+    margin:0;
+  }
+  p{line-height:1.6;color:var(--ink-soft);margin:0;}
+  a{color:inherit;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+  img,svg{display:block;max-width:100%;}
+  :focus-visible{outline:3px solid var(--honey);outline-offset:2px;}
+
+  /* ---------- HEADER ---------- */
+  header{
+    padding:20px 0;
+    border-bottom:1px solid var(--line);
+    background:var(--bg);
+    position:sticky;top:0;z-index:50;
+  }
+  header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;}
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand-mark{width:34px;height:34px;flex-shrink:0;}
+  .brand-name{font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;color:var(--teal-deep);}
+  .brand-name span{display:block;font-family:'Inter',sans-serif;font-weight:500;font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--brick);}
+  .header-cta{
+    display:flex;align-items:center;gap:18px;
+  }
+  .phone-link{font-weight:600;font-size:0.95rem;text-decoration:none;color:var(--teal-deep);white-space:nowrap;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    background:var(--teal);color:var(--white);
+    font-family:'Inter',sans-serif;font-weight:600;font-size:0.95rem;
+    padding:13px 24px;border-radius:100px;border:none;cursor:pointer;
+    text-decoration:none;transition:transform .15s ease, background .15s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{background:var(--teal-deep);transform:translateY(-1px);}
+  .btn-honey{background:var(--honey);color:var(--teal-deep);}
+  .btn-honey:hover{background:#d3922f;}
+  @media (max-width:640px){ .phone-link{display:none;} }
+
+  /* ---------- HERO ---------- */
+  .hero{padding:72px 0 40px;}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:0.78rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;
+    color:var(--brick);background:#F6E4DC;padding:7px 14px;border-radius:100px;
+    margin-bottom:20px;
+  }
+  .hero h1{font-size:clamp(2.2rem,4.2vw,3.4rem);line-height:1.08;}
+  .hero h1 em{font-style:italic;color:var(--brick);}
+  .hero p.lead{font-size:1.13rem;margin-top:20px;max-width:46ch;}
+  .hero-actions{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;}
+  .trust-row{display:flex;gap:28px;margin-top:36px;flex-wrap:wrap;}
+  .trust-item{display:flex;align-items:center;gap:8px;font-size:0.85rem;color:var(--ink-soft);font-weight:500;}
+  .trust-item svg{width:18px;height:18px;flex-shrink:0;color:var(--teal);}
+
+  .hero-art{position:relative;}
+  .hero-art svg{width:100%;height:auto;}
+  .hero-photo{
+    position:relative;border-radius:24px;overflow:hidden;
+    box-shadow:var(--shadow);
+    aspect-ratio:4/5;
+  }
+  .hero-photo img{
+    width:100%;height:100%;object-fit:cover;object-position:center 15%;
+    display:block;
+  }
+  .hero-photo::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(15,44,74,0) 55%, rgba(15,44,74,0.45) 100%);
+  }
+  .hero-photo::before{
+    content:"";position:absolute;inset:0;
+    border:1px solid rgba(255,255,255,0.4);border-radius:24px;
+    box-shadow:inset 0 0 0 6px rgba(255,255,255,0.9);
+    z-index:2;pointer-events:none;
+  }
+
+  @media (max-width:900px){
+    .hero .wrap{grid-template-columns:1fr;gap:36px;}
+    .hero-art{order:-1;max-width:320px;margin:0 auto;}
+  }
+
+  /* ---------- STRIP ---------- */
+  .strip{
+    background:var(--teal-deep);color:var(--white);padding:14px 0;overflow:hidden;
+  }
+  .strip .track{
+    display:flex;gap:56px;white-space:nowrap;font-size:0.85rem;font-weight:500;letter-spacing:0.02em;
+    color:#EFE6D2;
+  }
+  .strip .track span{display:flex;align-items:center;gap:10px;}
+  .strip .dot{width:5px;height:5px;border-radius:50%;background:var(--honey);}
+
+  /* ---------- COVER SECTION ---------- */
+  .section{padding:88px 0;}
+  .section-head{max-width:640px;margin-bottom:52px;}
+  .section-head .eyebrow{margin-bottom:14px;}
+  .section-head h2{font-size:clamp(1.8rem,3vw,2.5rem);line-height:1.15;}
+  .section-head p{margin-top:14px;font-size:1.05rem;}
+
+  .cover-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+  }
+  .cover-card{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:30px 26px;display:flex;flex-direction:column;gap:14px;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .cover-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
+  .cover-icon{
+    width:48px;height:48px;border-radius:14px;background:var(--bg-warm);
+    display:flex;align-items:center;justify-content:center;color:var(--teal);
+  }
+  .cover-icon svg{width:24px;height:24px;}
+  .cover-card h3{font-size:1.15rem;font-weight:600;}
+  .cover-card p{font-size:0.93rem;}
+  .cover-card .learn{
+    margin-top:auto;font-size:0.85rem;font-weight:600;color:var(--brick);
+    display:inline-flex;align-items:center;gap:5px;cursor:pointer;background:none;border:none;padding:0;font-family:inherit;
+  }
+  .cover-card.wide{grid-column:span 1;}
+  @media (max-width:900px){ .cover-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:600px){ .cover-grid{grid-template-columns:1fr;} }
+
+  /* ---------- HOW IT WORKS ---------- */
+  .how{background:var(--bg-warm);}
+  .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;counter-reset:step;}
+  .how-item{position:relative;padding-top:8px;}
+  .how-num{
+    font-family:'Fraunces',serif;font-size:2.6rem;font-weight:600;color:var(--honey-soft);
+    line-height:1;margin-bottom:12px;
+  }
+  .how-item h3{font-size:1.1rem;margin-bottom:8px;}
+  .how-item p{font-size:0.93rem;}
+  @media (max-width:800px){ .how-grid{grid-template-columns:1fr;gap:36px;} }
+
+  /* ---------- FORM SECTION ---------- */
+  .form-section{padding:88px 0 100px;}
+  .form-panel{
+    background:var(--teal-deep);border-radius:24px;padding:56px;color:var(--white);
+    display:grid;grid-template-columns:0.9fr 1.1fr;gap:48px;overflow:hidden;position:relative;
+  }
+  .form-panel::before{
+    content:"";position:absolute;right:-80px;top:-80px;width:280px;height:280px;
+    background:radial-gradient(circle,rgba(227,164,61,0.25),transparent 70%);
+  }
+  .form-copy h2{color:var(--white);font-size:clamp(1.7rem,2.6vw,2.2rem);line-height:1.15;}
+  .form-copy p{color:#CBDAD6;margin-top:16px;font-size:1rem;max-width:38ch;}
+  .form-copy .promise{margin-top:32px;display:flex;flex-direction:column;gap:12px;}
+  .form-copy .promise div{display:flex;align-items:flex-start;gap:10px;font-size:0.9rem;color:#DCE7E4;}
+  .form-copy .promise svg{width:18px;height:18px;flex-shrink:0;color:var(--honey);margin-top:2px;}
+
+  form{background:var(--white);border-radius:16px;padding:32px;position:relative;z-index:1;}
+  .field{margin-bottom:18px;}
+  .field label{display:block;font-size:0.83rem;font-weight:600;color:var(--teal-deep);margin-bottom:7px;}
+  .field input, .field select{
+    width:100%;padding:12px 14px;border-radius:10px;border:1.5px solid var(--line);
+    font-family:'Inter',sans-serif;font-size:0.95rem;color:var(--ink);background:var(--bg);
+  }
+  .field input:focus, .field select:focus{border-color:var(--teal);outline:none;}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  fieldset{border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;margin:0 0 20px;}
+  fieldset legend{font-size:0.83rem;font-weight:600;color:var(--teal-deep);padding:0 6px;}
+  .check-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;margin-top:6px;}
+  .check-item{display:flex;align-items:center;gap:9px;font-size:0.87rem;color:var(--ink-soft);}
+  .check-item input{width:16px;height:16px;accent-color:var(--teal);}
+  .submit-btn{width:100%;margin-top:6px;padding:15px;font-size:1rem;}
+  .fine-print{font-size:0.76rem;color:var(--ink-soft);margin-top:14px;line-height:1.5;}
+  .thank-you{display:none;text-align:center;padding:40px 10px;}
+  .thank-you svg{width:52px;height:52px;color:var(--teal);margin:0 auto 16px;}
+  .thank-you h3{color:var(--teal-deep);font-size:1.3rem;margin-bottom:8px;}
+  .thank-you p{font-size:0.92rem;}
+
+  @media (max-width:860px){
+    .form-panel{grid-template-columns:1fr;padding:32px 24px;}
+    .check-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--teal-deep);color:#B9CAC6;padding:44px 0 32px;}
+  footer .wrap{display:flex;flex-direction:column;gap:18px;}
+  footer .foot-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  footer .brand-name{color:var(--white);}
+  footer .brand-name span{color:var(--honey);}
+  footer p{color:#9FB4AF;font-size:0.78rem;line-height:1.6;}
+  footer .foot-links{display:flex;gap:20px;font-size:0.85rem;}
+  footer .foot-links a{text-decoration:none;color:#D9E4E1;}
+  hr.foot-rule{border:none;border-top:1px solid #2A5851;margin:8px 0;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <img src="aliviar-logo.jpeg" alt="Aliviar Financial" style="height:34px;width:auto;border-radius:4px;">
+    </div>
+    <div class="header-cta">
+      <a class="phone-link" href="tel:+447523817381">07523 817381</a>
+      <a class="btn" href="#quote-form">Get my free review</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Whole‑of‑market &amp; FCA regulated</div>
+      <h1>Protection advice that actually <em>fits your life</em>, not a sales script.</h1>
+      <p class="lead">We compare cover from across the market and explain it in plain English — so you know exactly what you're protecting, and what it costs. No obligation, no pressure.</p>
+      <div class="hero-actions">
+        <a class="btn btn-honey" href="#quote-form">Get my free review</a>
+        <a class="btn" style="background:transparent;color:var(--teal-deep);border:1.5px solid var(--teal);" href="#covers">See the cover types</a>
+      </div>
+      <div class="trust-row">
+        <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>Free, no‑obligation chat</div>
+        <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>FCA regulated advice</div>
+        <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>Compare the whole market</div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="hero-photo">
+        <img src="family-hero.png" alt="A smiling family of four standing in front of their home">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <div class="track">
+      <span><span class="dot"></span>Life insurance</span>
+      <span><span class="dot"></span>Income protection</span>
+      <span><span class="dot"></span>Serious illness cover</span>
+      <span><span class="dot"></span>Mortgage protection</span>
+      <span><span class="dot"></span>Buildings &amp; contents</span>
+      <span><span class="dot"></span>Independent, whole‑of‑market advice</span>
+    </div>
+  </div>
+</div>
+
+<section class="section" id="covers">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Cover, explained simply</div>
+      <h2>Five ways to protect what your income and home depend on.</h2>
+      <p>Every situation is different — we'll help you work out which of these actually matter for you, and skip the ones that don't.</p>
+    </div>
+
+    <div class="cover-grid">
+
+      <div class="cover-card">
+        <div class="cover-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 10-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg></div>
+        <h3>Life insurance</h3>
+        <p>A lump sum paid to your family if you die during the policy term — so a mortgage, bills or your children's future aren't left to chance.</p>
+        <button class="learn" onclick="document.getElementById('cover-life').scrollIntoView({behavior:'smooth'})">Learn more →</button>
+      </div>
+
+      <div class="cover-card">
+        <div class="cover-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 018 0v2"/></svg></div>
+        <h3>Income protection</h3>
+        <p>Replaces part of your salary if illness or injury stops you working — paid monthly for as long as you need it, until you're back on your feet.</p>
+        <button class="learn" onclick="document.getElementById('cover-income').scrollIntoView({behavior:'smooth'})">Learn more →</button>
+      </div>
+
+      <div class="cover-card">
+        <div class="cover-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0112 6.5 5.5 5.5 0 0121.5 12c-2.5 4.5-9.5 9-9.5 9z"/><path d="M8 12h2l1.5-3 2 6L15 12h1"/></svg></div>
+        <h3>Serious illness protection</h3>
+        <p>Pays out a tax‑free lump sum on diagnosis of a condition like cancer, a heart attack or stroke — money to focus on recovery, not finances.</p>
+        <button class="learn" onclick="document.getElementById('cover-illness').scrollIntoView({behavior:'smooth'})">Learn more →</button>
+      </div>
+
+      <div class="cover-card">
+        <div class="cover-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></div>
+        <h3>Mortgage protection</h3>
+        <p>Cover built around your mortgage balance and term, so if the worst happens, your home doesn't become a financial burden for those left behind.</p>
+        <button class="learn" onclick="document.getElementById('cover-mortgage').scrollIntoView({behavior:'smooth'})">Learn more →</button>
+      </div>
+
+      <div class="cover-card">
+        <div class="cover-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-6h6v6"/><path d="M9 12h.01M15 12h.01"/></svg></div>
+        <h3>Buildings &amp; contents</h3>
+        <p>Protects the structure of your home and everything in it — from storm damage to theft — so an accident doesn't become a financial crisis.</p>
+        <button class="learn" onclick="document.getElementById('cover-buildings').scrollIntoView({behavior:'smooth'})">Learn more →</button>
+      </div>
+
+      <div class="cover-card" style="background:var(--teal);border-color:var(--teal);">
+        <div class="cover-icon" style="background:rgba(255,255,255,0.15);color:var(--honey-soft);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.2 6.6H21l-5.4 4 2 6.6L12 15.8 6.4 19.2l2-6.6L3 8.6h6.8z"/></svg></div>
+        <h3 style="color:var(--white);">Not sure what you need?</h3>
+        <p style="color:#D5E3E0;">Most people only need two or three of these. Tell us a bit about your situation and we'll tell you honestly what's worth having.</p>
+        <a class="learn" style="color:var(--honey-soft);" href="#quote-form">Get my free review →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section how">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">How it works</div>
+      <h2>Three steps from "not sure" to properly covered.</h2>
+    </div>
+    <div class="how-grid">
+      <div class="how-item">
+        <div class="how-num">01</div>
+        <h3>Tell us the basics</h3>
+        <p>A two‑minute form below — your situation and which cover you're curious about. No card details, no commitment.</p>
+      </div>
+      <div class="how-item">
+        <div class="how-num">02</div>
+        <h3>Have a real conversation</h3>
+        <p>One of our advisers calls you back to understand your circumstances and compare options across the whole market.</p>
+      </div>
+      <div class="how-item">
+        <div class="how-num">03</div>
+        <h3>Choose, or don't</h3>
+        <p>We'll recommend what genuinely fits. If nothing does, we'll tell you that too — there's never any pressure to buy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="form-section" id="quote-form">
+  <div class="wrap">
+    <div class="form-panel">
+      <div class="form-copy">
+        <h2>Get a free, no‑obligation protection review.</h2>
+        <p>Leave your details and let us know what you're interested in — an adviser will be in touch to talk it through, on your schedule.</p>
+        <div class="promise">
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>No cost, no obligation to buy</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>We'll never share your details with third parties</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>Advisers are FCA regulated and whole‑of‑market</div>
+        </div>
+      </div>
+
+      <div>
+        <form id="leadForm">
+          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+          <input type="hidden" name="subject" value="New protection review request — Aliviar Financial">
+          <input type="hidden" name="from_name" value="Aliviar Financial Website">
+          <input type="checkbox" name="botcheck" style="display:none;">
+          <div class="field-row">
+            <div class="field">
+              <label for="fname">First name</label>
+              <input type="text" id="fname" name="fname" required>
+            </div>
+            <div class="field">
+              <label for="lname">Last name</label>
+              <input type="text" id="lname" name="lname" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="field">
+            <label for="tel">Phone number</label>
+            <input type="tel" id="tel" name="tel" required>
+          </div>
+
+          <fieldset>
+            <legend>Which cover are you interested in?</legend>
+            <div class="check-grid">
+              <label class="check-item"><input type="checkbox" name="cover" value="Life insurance"> Life insurance</label>
+              <label class="check-item"><input type="checkbox" name="cover" value="Income protection"> Income protection</label>
+              <label class="check-item"><input type="checkbox" name="cover" value="Serious illness protection"> Serious illness protection</label>
+              <label class="check-item"><input type="checkbox" name="cover" value="Mortgage protection"> Mortgage protection</label>
+              <label class="check-item"><input type="checkbox" name="cover" value="Buildings & contents"> Buildings &amp; contents</label>
+              <label class="check-item"><input type="checkbox" name="cover" value="Not sure yet"> Not sure yet — advise me</label>
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <label for="besttime">Best time to call</label>
+            <select id="besttime" name="besttime">
+              <option>Morning</option>
+              <option>Afternoon</option>
+              <option>Evening</option>
+              <option>Any time</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-honey submit-btn">Request my free review</button>
+          <p class="fine-print">By submitting, you agree to be contacted about protection insurance advice. Aliviar Financial Ltd is authorised and regulated by the Financial Conduct Authority (FCA No: 938635). See our Privacy Policy for how we handle your data.</p>
+        </form>
+
+        <div class="thank-you" id="thankYou">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+          <h3>Thanks — we've got it.</h3>
+          <p>An adviser will call you at your preferred time. In the meantime, feel free to browse the cover types above.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <img src="aliviar-logo.jpeg" alt="Aliviar Financial" style="height:30px;width:auto;border-radius:4px;">
+      <div class="foot-links">
+        <a href="tel:+447523817381">07523 817381</a>
+        <a href="mailto:segun.olorunsola@aliviarfinancial.com">segun.olorunsola@aliviarfinancial.com</a>
+      </div>
+    </div>
+    <hr class="foot-rule">
+    <p>Aliviar Financial Ltd is authorised and regulated by the Financial Conduct Authority, FCA No: 938635. Registered in England &amp; Wales, company number 12797803. Registered office: No 2 Falcon Gate, Regus Building, Welwyn Garden City, AL7 1TW. Life insurance, income protection and serious illness protection are not usually savings products and have no cash‑in value at any time. Buildings and contents insurance is a general insurance product, not a protection/investment product.</p>
+  </div>
+</footer>
+
+<script>
+  const leadForm = document.getElementById('leadForm');
+  leadForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    const submitBtn = leadForm.querySelector('.submit-btn');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending…';
+    submitBtn.disabled = true;
+
+    const formData = new FormData(leadForm);
+    // Combine any checked "cover" checkboxes into one readable line for the email
+    const covers = formData.getAll('cover');
+    if (covers.length) formData.set('cover_interested_in', covers.join(', '));
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        leadForm.style.display = 'none';
+        document.getElementById('thankYou').style.display = 'block';
+      } else {
+        alert('Something went wrong sending your details — please call us on 07523 817381 or try again.');
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }
+    })
+    .catch(() => {
+      alert('Something went wrong sending your details — please call us on 07523 817381 or try again.');
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+    });
+  });
+</script>
+
+</body>
+</html>
